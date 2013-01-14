@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Tags</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,9 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.title %></td>
+    <td>
+      <%= post.tags.map { |t| %> <% t.name }.join(', ') %>
+    </td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
