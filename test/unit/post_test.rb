@@ -5,7 +5,8 @@ class PostTest < ActiveSupport::TestCase
     p = Post.new
     p.tag_list = 'banana,orange,blueberry'
     p.save
-    tags = p.tags.collect { |t| t.name }
-    assert tags.include?('orange'), tags.join(',')
+
+    assigned_tags = p.tags.collect { |t| t.name }
+    assert assigned_tags.include?('orange'), assigned_tags.join(',')
   end
 end
