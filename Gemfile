@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 gem 'faker'
+gem 'compass'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
