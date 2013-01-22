@@ -6,14 +6,12 @@ class TagTinter
     @colour2 = col2
   end
 
-  def update_colours
+  def update_tints
     total = ActsAsTaggableOn::Tagging.count
 
     ActsAsTaggableOn::Tag.all.each do |tag|
       count = tag.taggings.count
       percent = ((count * 100) / total).round(2)
-      puts percent
-      puts "total: #{total}"
       tag.tag_colour = evaluate("mix(#{@colour1}, #{@colour2}, #{percent})")
       tag.save
     end

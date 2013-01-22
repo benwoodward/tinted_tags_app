@@ -13,7 +13,7 @@ class TagTinterTest < ActiveSupport::TestCase
     tags.each do |tag|
       Post.create(title: 'title', tag_list: tag)
     end
-    TagTinter.new('black', 'white').update_colours
+    TagTinter.new('black', 'white').update_tints
 
     # each tag has 25% usage, '#bfbfbf' is black with 25% white
     assert Tag.first.tag_colour == '#bfbfbf', Tag.first.tag_colour
@@ -26,7 +26,7 @@ class TagTinterTest < ActiveSupport::TestCase
     tags.each do |tag|
       Post.create(title: 'title', tag_list: tag)
     end
-    TagTinter.new('black', 'white').update_colours
+    TagTinter.new('black', 'white').update_tints
 
     # each tag has 20% usage, '#cccccc' is black with 20% white
     assert Tag.first.tag_colour == '#cccccc', Tag.first.tag_colour
