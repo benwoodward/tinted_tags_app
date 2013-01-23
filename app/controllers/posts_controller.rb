@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @tags = Post.tag_counts_on(:tags).order('count desc')
 
     respond_to do |format|
       format.html # index.html.erb

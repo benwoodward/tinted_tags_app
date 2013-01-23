@@ -1,5 +1,12 @@
 <h1>Listing posts</h1>
 
+<ul>
+  <% @tags.each do |tag| %>
+    <li style="background-color: <%= tag.tag_colour %>; display: inline-block;">
+      <%= tag.name %>
+    </li>
+  <% end %>
+</ul>
 <table>
   <tr>
     <th>Title</th>
